@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+    let playerScore = 0;
+    let computerScore = 0;
+    function computerPlay(){
+        let choice = ["rock", "paper", "scissors"];
+        const computerSelection = choice[Math.floor(Math.random() * choice.length)];
+        return computerSelection;
+    }
+    function playSelect(){
+      let playChoice = prompt("Rock, Paper or Scissors?");
+      let caseInsensitive = playChoice.toLowerCase();
+      return caseInsensitive;
+    } 
+
+  
+    function oneRound (playerSelection, computerSelection){
+      if (playerSelection === "rock" && computerSelection === "scissors")
+      return "You Win! Rock beats Scissors";
+
+      if (playerSelection === "rock" && computerSelection === "paper")
+      return "You Lose! Paper beats Rock";
+
+      if (playerSelection === "rock" && computerSelection === "rock")
+      return "It's a tie!";
+
+      if (playerSelection === "paper" && computerSelection === "scissors")
+      return "You Lose! Scissors beats paper";
+      
+      if (playerSelection === "paper" && computerSelection === "rock")
+      return "You Win! Rock beats Scissors";
+
+      if (playerSelection === "paper" && computerSelection === "paper")
+      return "It's a tie!";
+
+      if (playerSelection === "scissors" && computerSelection === "rock")
+      return "You Lose! Rock beats Scissors";
+
+      if (playerSelection === "scissors" && computerSelection === "paper")
+      return "You Win! Scissors beats paper";
+
+      if (playerSelection === "scissors" && computerSelection === "scissors")
+      return "It's a tie!";
+
+      if (playerSelection === "rock" && computerSelection === "scissors")
+      return "You Win! Rock beats Scissors";
+
+      if (playerSelection === "rock" && computerSelection === "paper")
+      return "You Lose! Paper beats Rock";
+
+      if (playerSelection === "rock" && computerSelection === "rock")
+      return "It's a tie!";
+
+      if (playerSelection === "paper" && computerSelection === "scissors")
+      return "You Lose! Scissors beats paper";
+      
+      if (playerSelection === "paper" && computerSelection === "rock")
+      return "You Win! Rock beats Scissors";
+
+      if (playerSelection === "paper" && computerSelection === "paper")
+      return "It's a tie!";
+
+      if (playerSelection === "scissors" && computerSelection === "rock")
+      return "You Lose! Rock beats Scissors";
+
+      if (playerSelection === "scissors" && computerSelection === "paper")
+      return "You Win! Scissors beats paper";
+
+      if (playerSelection === "scissors" && computerSelection === "scissors")
+      return "It's a tie!";
+    }
+  
+  
+    
+    function game(){
+
+      const playerSelection = playSelect();
+      const computerSelection = computerPlay();
+
+      
+      let oneRoundCondensed = oneRound(playerSelection, computerSelection)
+      
+    
+      
+
+      if(oneRoundCondensed.includes("You Win!"))
+        {
+        playerScore += 1;
+        }
+      else if (oneRoundCondensed.includes("You Lose!")) 
+        {
+          computerScore +=1;
+        }
+      else
+        {
+          playerScore += 0;
+          computerScore += 0;
+        }
+      console.log(oneRoundCondensed);
+      console.log("Your current score is " + playerScore + " and the current computer score is " + computerScore)
+    }
+    
+    for (let i = 0; i < 5; i++) {
+      game();
+    }
+    
+    if (playerScore > computerScore)
+    {
+      console.log("Wow wow congrats you won!");
+    }
+    else if (playerScore < computerScore)
+    {
+      console.log("Oh no, you didnt win!");
+    }
+    
+   
+    
+    
+    
+    
+    
+  
+  </script>
+</body>
+</html>
+
